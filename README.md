@@ -16,4 +16,16 @@
 
 尚未成功。
 
+### 攻击流程
+1. 需要确定每个人的地址在`authorizedUsers[index]`中的`index`；
+2. 每个人调用`function addAuthorizedAccount(uint votePosition, address proposal)`，投票出攻击发动者
+    - `votePosition`表示步骤1中的`index`
+    - `proposal`表示推举出的攻击发动者地址
+    - 此过程一旦有人输入错误的`proposal`地址，则需要全部重来
+3. 攻击发动者调用`function setObserver(address ob)`，以避免`assert(withdrawObserver.call(bytes4(sha3("observe()"))))`验证失败
+    - `ob`可为任意地址
+4. 发动攻击
+
+
+
 ## 下一个方案
