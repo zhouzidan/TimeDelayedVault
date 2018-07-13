@@ -77,7 +77,7 @@ contract GamerVerifier {
     }
     
     function addGamer(address addr, uint magic) {
-        SOME SECRET CODE;
+        // SOME SECRET CODE;
         gamers[addr] = 1;
     }
     
@@ -151,18 +151,18 @@ contract oobserver {
 }
 
 contract TimeDelayedVault {
-    uint public nextWithdrawTime;   //下次取钱时间
-    uint public withdrawCoolDownTime;  //取钱的间隔
-    address[] public authorizedUsers;
+    uint public nextWithdrawTime;   //下次取钱时间 构造函数初始化
+    uint public withdrawCoolDownTime;  //取钱的间隔 构造函数初始化
+    address[] public authorizedUsers;   //所有的小组成员的地址 构造函数初始化
     address public withdrawObserver;
     address public additionalAuthorizedContract;
     address public proposedAAA;
-    uint public lastUpdated;
-    bool[] public votes;
+    uint public lastUpdated; // 更新时间，合约部署的时间-重生相关-可以花钱修改
+    bool[] public votes; // 每个小组成员：false  构造函数中初始化
     address[] public observerHistory;
-    GamerVerifier public g = GamerVerifier(SOMEADDRESS);
-    address owner;
-    address walletLibrary;
+    GamerVerifier public g = GamerVerifier(SOMEADDRESS); //合约对象，参数是合约地址
+    address owner; // initializeVault函数中初始化，也是在构造函数中初始化
+    address walletLibrary; //钱包的合约地址 构造函数初始化 
     
     function TimeDelayedVault() recordAction {
         nextWithdrawTime = now;
@@ -229,7 +229,7 @@ contract TimeDelayedVault {
     }
     
     //msg.value ：执行合约时，转账的eth数量，以wei为单位。
-
+    // 传入大于0.01的ETH，可以延长生命
     function addToReserve() payable recordAction external returns (uint) {
         require(g.isValidGamer(msg.sender));
         assert(msg.value > 0.01 ether);
@@ -245,6 +245,7 @@ contract TimeDelayedVault {
         return true;
     }
     
+    // 存在false的时候，返回false
     function checkAllVote() private returns (bool) {
         for(uint i = 0; i < votes.length; i++) {
             if(!votes[i]) {
@@ -255,6 +256,7 @@ contract TimeDelayedVault {
         return true;
     }
     
+
     function clearVote() private {
         for(uint i = 0; i < votes.length; i++) {
             votes[i] = false;
