@@ -261,7 +261,9 @@ contract TimeDelayedVault {
         }
     }
 
-//增加认证的账户
+    // 这是一个多人共享钱包，需要所有人投票选出一个地址才能取钱，此方法用于投票
+    // votePosition 表示投票人在 authorizedUsers 中的序列（我觉得可参考 GamerVerifier 中地址出现的顺序）
+    // proposal 表示给哪个地址投票，当所有人投票给同一个地址时，additionalAuthorizedContract 获得赋值（投票出的地址），否则转账会转到 0x0 空地址
     function addAuthorizedAccount(uint votePosition, address proposal) onlyAuthorized external {
         require(votePosition < authorizedUsers.length);
         require(msg.sender == authorizedUsers[votePosition]);
