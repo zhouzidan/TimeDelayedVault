@@ -214,6 +214,11 @@ contract TimeDelayedVault {
         _;
     }
     
+    
+    // 为保证取钱时 assert(withdrawObserver.call(bytes4(sha3("observe()")))) 通过
+    // 获得授权的取钱者在取钱之前，需要首次调用此方法，为 withdrawObserver 赋值
+    // 取钱者在调用此方法后，其他人不能再首次调用，否则会改变 withdrawObserver 的赋值
+    // 任何人只有首次调用才会修改 withdrawObserver 的赋值 
     function setObserver(address ob) {
         bool duplicate = false;
         for (uint i = 0; i < observerHistory.length; i++) {
