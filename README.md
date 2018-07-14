@@ -47,3 +47,19 @@ addAuthorizedAccount
 
 
 ## 下一个方案
+
+## 关于取钱的目标合约
+1. TimeDelayedVault合约
+2. CommonWalletLibrary合约
+目标是1，TimeDelayedVault合约
+
+## 关于充值的方式
+1.[不允许] 直接向合约的地址充值
+2.[允许] 向合约的addToReserve函数充值
+3.[允许] 通过销毁一个自建的合约，让其出现退币给TimeDelayedVault合约
+4.[不允许] 通过一个自建的合约，向TimeDelayedVault合约地址直接转账操作
+5.[允许] 通过一个自建的合约，向TimeDelayedVault合约的addToReserve函数充值
+
+
+## 
+
