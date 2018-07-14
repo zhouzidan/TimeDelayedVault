@@ -2,6 +2,9 @@
 # 合约地址
 0x997f5d2A4865D48873E4D4130A791C801D209E12
 
+# `CommonWalletLibrary`合约地址
+`0xaBCEAf05468b98518EE35Ab92cBE7a402A5F61f7`
+
 # 攻击方案
 ## re-entry
     function withdrawFund() onlyAuthorized external returns (bool) {
