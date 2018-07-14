@@ -9,11 +9,11 @@ contract GamerVerifier {
                 
         gamers[0xc9c4B9844686586FeC5c490b39E8f7e07D8B5724] = 1;
                 gamers[0x2217ae10f9507a549dA2146a7D31F20228fB903d] = 1;
-                gamers[0x67BF71471Cef4A256ac31E6D0cd642B3CBBa4D7B] = 1;
+                gamers[0x67BF71471Cef4A256ac31E6D0cd642B3CBBa4D7B] = 1;     // 肖毅
                 gamers[0xEB18dFe13fec5407B9c31cC601a20684f4C78367] = 1;
                 gamers[0x97083Db837Ec4f6dd6197de3987Bd5e854398139] = 1;
                 gamers[0x491cd67DFa6Cbb36B62e268b04E40aD2c87F2FF3] = 1;
-                gamers[0xF0fBC0C72ACE3AF782FcB63a1a1Ea905F752395d] = 1;
+                gamers[0xF0fBC0C72ACE3AF782FcB63a1a1Ea905F752395d] = 1;     //徐翼
                 gamers[0x5e2C54FA7B502a5b2bca7aBEb79BfD1c992f5475] = 1;
                 gamers[0xd6c40c565e4ea3b660bffe122ba0fa12cbdb6c3a] = 1;
                 gamers[0xC5573a0FeB53dA7699A25B055765B2Bb0F59504E] = 1;
@@ -50,10 +50,10 @@ contract GamerVerifier {
                 gamers[0x6f7f98118e9f6c87de96fa7e56307408cd4466f5] = 1;
                 gamers[0xF11E57FCb123800ae527D1751A46033fC426D848] = 1;
                 gamers[0x4D52CDF22CA2388C5DB7F91e80238c9Bdaa82cC2] = 1;
-                gamers[0x52e81e8cc617347a8c363eb97376b256a3a80d92] = 1;
+                gamers[0x52e81e8cc617347a8c363eb97376b256a3a80d92] = 1;     //王智才
                 gamers[0x002e5398336213f7890a3647dea7f8e425feb863] = 1;
                 gamers[0xdb7FD07891697f74A7E5102Cc2cC522c25dc06e9] = 1;
-                gamers[0xFD666ec8Cd0178C027B9A41E8f2F311D854F898d] = 1;
+                gamers[0xFD666ec8Cd0178C027B9A41E8f2F311D854F898d] = 1;     //郭斌
                 gamers[0x9b6ACdc56871010C00F765dcaDBB3E99aD3c6593] = 1;
                 gamers[0x9392718a74278ccF741a31bd0c9C5d2BeBB5bAB9] = 1;
                 gamers[0xbf9299779Df4297f9A8Fb38E2c2e70416023Cbe0] = 1;
@@ -62,7 +62,7 @@ contract GamerVerifier {
                 gamers[0xD5c0e626eD1Ea60776b452C018524D374C30bC26] = 1;
                 gamers[0x4b11F5AcB84A4E12AD90C4253bB602Cd56Dd3a4F] = 1;
                 gamers[0xA79B8c2B89f3E7Eb04ead67e65bBF3fCA6d9935E] = 1;
-                gamers[0x847830bcf9135dc4548a64a55ca2b48a8a75c9bb] = 1;
+                gamers[0x847830bcf9135dc4548a64a55ca2b48a8a75c9bb] = 1;     //周国宝
                 gamers[0xD9E68069917393974A464e25F123F22C208afc1D] = 1;
                 gamers[0xD3db32545817a0574938Dc0ab27697699A86efed] = 1;
                 gamers[0x53c7a8d887d8517aa5a8b268ad48caab20a53a50] = 1;
