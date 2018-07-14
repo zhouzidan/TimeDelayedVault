@@ -1,9 +1,9 @@
-# TimeDelayedVault
-# 合约地址
+# TimeDelayedVault合约地址
 0x997f5d2A4865D48873E4D4130A791C801D209E12
-
-# `CommonWalletLibrary`合约地址
-`0xaBCEAf05468b98518EE35Ab92cBE7a402A5F61f7`
+# CommonWalletLibrary钱包合约的地址
+0xaBCEAf05468b98518EE35Ab92cBE7a402A5F61f7
+# GamerVerifier的合约地址
+0xf4b15e09b284ebeefdcbe0805376c309710fae6e
 
 
 ## 关于重生
