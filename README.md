@@ -5,6 +5,13 @@
 # `CommonWalletLibrary`合约地址
 `0xaBCEAf05468b98518EE35Ab92cBE7a402A5F61f7`
 
+
+## 关于重生
+有一个12小时的限制。
+刚刚智才同学已经更新过了，下次更新，需要发生在2018/7/14 15:55之前
+
+
+
 # 攻击方案
 ## re-entry
     function withdrawFund() onlyAuthorized external returns (bool) {
@@ -16,6 +23,14 @@
     }
 因为这里的金额转账发生在时间修改之前。
 根据第七课特别提到的re-entry攻击。通过智能合约去调用该方法，然后获得所有权之后，重复调用。在block gas limit限制下，尽量多的获取ETH。
+
+
+先自行在测试网络上部署，在自己的测试网络上尝试
+1. 先建立投票选出取钱的地址，每个小组成员都调用该函数
+addAuthorizedAccount
+投票选择取钱的目标是攻击合约的地址
+2. 调用setObserver函数，随便一个地址
+3. re-entry攻击
 
 尚未成功。
 
