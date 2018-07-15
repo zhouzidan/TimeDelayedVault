@@ -15,13 +15,13 @@
 [对应的TX](https://ropsten.etherscan.io/tx/0x53f3b87a74fdb37b1c610dc7216db5f0aae81af670c75abc2ebd34e99cd3de15)
 2. CommonWalletLibrary合约的owner在我这边
 
-> 风险：TimeDelayedVault .resolve()   
-> 具备owner权限的人，可以销毁我们的合约。我们目前做的防护是更新时间，使其一直不满足12小时即可。  
+> 风险：TimeDelayedVault .resolve()     
+> 具备owner权限的人，可以销毁我们的合约。我们目前做的防护是更新时间，使其一直不满足12小时即可。    
 
 # 取钱方案
 ## re-entry
-> 这个方案基本是被放弃的。因为取钱太慢了。  
-> 每次只能取几个0.01，每30min只能取一次。太慢了。  
+> 这个方案基本是被放弃的。因为取钱太慢了。    
+> 每次只能取几个0.01，每30min只能取一次。太慢了。    
 ### 攻击流程
 1. 需要确定每个人的地址在`authorizedUsers[index]`中的`index`；
 2. 每个人调用`function addAuthorizedAccount(uint votePosition, address proposal)`，投票出攻击发动者
@@ -52,9 +52,10 @@ observerHistory
 ## 关于充值的方式
 1. [不允许]  直接向合约的地址充值
 2. [允许] 向合约的addToReserve函数充值
-3. [允许] 通过销毁一个自建的合约，让其出现退币给TimeDelayedVault合约
-4. [不允许] 通过一个自建的合约，向TimeDelayedVault合约地址直接转账操作
-5. [允许] 通过一个自建的合约，向TimeDelayedVault合约的addToReserve函数充值
+3. [允许] 通过销毁一个自建的合约，让其出现退币给TimeDelayedVault合约 
+[Known Attacks - Ethereum Smart Contract Best Practices](https://consensys.github.io/smart-contract-best-practices/known_attacks/#forcibly-sending-ether-to-a-contract)
+5. [不允许] 通过一个自建的合约，向TimeDelayedVault合约地址直接转账操作
+6. [允许] 通过一个自建的合约，向TimeDelayedVault合约的addToReserve函数充值
 **选择第三种**
 
 ## 写在最后
